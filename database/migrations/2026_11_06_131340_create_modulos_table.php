@@ -13,18 +13,9 @@ return new class extends Migration
     {
         Schema::create('modulos', function (Blueprint $table) {
             $table->id();
-            $table->string('codigo');
+            $table->string('codigo')->unique();
             $table->string('nombre');
 
-             //Llave foranea profesor
-            $table->unsignedBigInteger('profesor_id')->nullable();
-
-            $table->foreign('profesor_id')
-                ->references('id')
-                ->on('profesors')
-                ->onDelete('set null')
-                ->onUpdate('set null');
-            
             $table->timestamps();
         });
     }

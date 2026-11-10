@@ -22,6 +22,5 @@ class Modulo extends Model
     protected $fillable = [
         'codigo',
         'nombre',
-        'profesor_id'
     ];
 }
